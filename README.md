@@ -14,4 +14,4 @@ https://pi-hole.net/
 Install from here:-
 https://github.com/pi-hole/pi-hole/#one-step-automated-install
 
-The Pi-Hole logo is © Pi-Hole, I had to make my own png.
+The Pi-Hole logo is © Pi-Hole.
