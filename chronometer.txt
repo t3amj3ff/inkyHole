@@ -1,0 +1,14 @@
+Replace the jsonFunc in Pi_Holes chronometer.sh with the one below:-
+
+jsonFunc() {
+  get_ftl_stats "json"
+
+  # DHCP, DNS, Ads, %
+  # Count DHCP leases
+  ph_dhcp_num=$(grep -cE . "/etc/pihole/dhcp.leases")
+
+  # Round % of ads blocked
+  ads_percent=$(printf %.0f "${ads_percentage_today_raw}")
+
+  echo "{\"dhcp_leases\":$ph_dhcp_num,\"dns_queries_today\":${dns_queries_today_raw},\"ads_blocked_today\":${ads_blocked_today_raw},\"ads_percentage_today\":$ads_percent}"
+}
